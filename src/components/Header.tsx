@@ -56,12 +56,12 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList>
+                  {/* Desktop Navigation */}
+                  <NavigationMenu className="hidden md:flex relative z-50">
+                    <NavigationMenuList>
               {/* Software Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-gray-700 hover:text-gray-900 bg-white">
+                <NavigationMenuTrigger className="text-gray-700 hover:text-gray-900 bg-white px-6 py-3 rounded-md hover:bg-gray-50 transition-colors">
                   Software
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -90,7 +90,7 @@ const Header = () => {
 
               {/* Industries Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-gray-700 hover:text-gray-900 bg-white">
+                <NavigationMenuTrigger className="text-gray-700 hover:text-gray-900 bg-white px-6 py-3 rounded-md hover:bg-gray-50 transition-colors">
                   Industries
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -121,7 +121,7 @@ const Header = () => {
 
               {/* Use Cases Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-gray-700 hover:text-gray-900 bg-white">
+                <NavigationMenuTrigger className="text-gray-700 hover:text-gray-900 bg-white px-6 py-3 rounded-md hover:bg-gray-50 transition-colors">
                   Use Cases
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -150,7 +150,7 @@ const Header = () => {
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/about" className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900 bg-white")}>
+                  <Link href="/about" className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900 bg-white px-6 py-3 rounded-md hover:bg-gray-50 transition-colors")}>
                     About
                   </Link>
                 </NavigationMenuLink>
@@ -158,7 +158,7 @@ const Header = () => {
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/contact" className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900 bg-white")}>
+                  <Link href="/contact" className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900 bg-white px-6 py-3 rounded-md hover:bg-gray-50 transition-colors")}>
                     Contact
                   </Link>
                 </NavigationMenuLink>
