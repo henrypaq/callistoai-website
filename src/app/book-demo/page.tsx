@@ -47,15 +47,15 @@ export default function BookDemo() {
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Demo Request Received!</h2>
             <p className="text-gray-600 mb-6">
-              Thank you for your interest in Callisto. We've received your demo request and will contact you within 24 hours to schedule your personalized demonstration.
+              Thank you for your interest in Callisto. We&apos;ve received your demo request and will contact you within 24 hours to schedule your personalized demonstration.
             </p>
             <div className="space-y-2 text-sm text-gray-500">
               <p>What happens next:</p>
               <ul className="text-left space-y-1">
                 <li>• Our team will review your requirements</li>
-                <li>• We'll contact you to confirm the best time</li>
-                <li>• You'll receive a calendar invite with meeting details</li>
-                <li>• Prepare any questions you'd like us to address</li>
+                <li>• We&apos;ll contact you to confirm the best time</li>
+                <li>• You&apos;ll receive a calendar invite with meeting details</li>
+                <li>• Prepare any questions you&apos;d like us to address</li>
               </ul>
             </div>
           </div>

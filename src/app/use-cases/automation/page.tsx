@@ -1,4 +1,4 @@
-import { CheckCircle, Zap, Clock, TrendingUp, Users, BarChart3 } from 'lucide-react';
+import { CheckCircle, Clock, TrendingUp, Users } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ProcessAutomation() {

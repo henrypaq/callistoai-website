@@ -12,7 +12,7 @@ export default function CustomerService() {
               Customer Service
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Deliver exceptional customer experiences with AI-powered support that's available 24/7 and learns from every interaction.
+              Deliver exceptional customer experiences with AI-powered support that&apos;s available 24/7 and learns from every interaction.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

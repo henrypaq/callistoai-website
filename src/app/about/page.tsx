@@ -12,7 +12,7 @@ export default function About() {
               About Callisto
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              We're on a mission to democratize AI and make it accessible to businesses of all sizes, helping them unlock their full potential through intelligent automation and data-driven insights.
+              We&apos;re on a mission to democratize AI and make it accessible to businesses of all sizes, helping them unlock their full potential through intelligent automation and data-driven insights.
             </p>
           </div>
         </div>
@@ -30,7 +30,7 @@ export default function About() {
                 At Callisto, we believe that artificial intelligence should be a force for good, empowering businesses to achieve more while reducing complexity and cost. Our mission is to make AI accessible, understandable, and beneficial for organizations of all sizes.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                We're not just building software; we're creating the future of work, where humans and AI collaborate seamlessly to solve complex problems and drive innovation.
+                We&apos;re not just building software; we&apos;re creating the future of work, where humans and AI collaborate seamlessly to solve complex problems and drive innovation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -67,7 +67,7 @@ export default function About() {
                   <Lightbulb className="h-6 w-6 text-purple-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Innovation</h3>
-                <p className="text-gray-600">We constantly push the boundaries of what's possible with AI.</p>
+                <p className="text-gray-600">We constantly push the boundaries of what&apos;s possible with AI.</p>
               </div>
               <div className="bg-orange-50 p-6 rounded-lg">
                 <div className="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
@@ -89,7 +89,7 @@ export default function About() {
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We're a diverse group of AI researchers, engineers, and business experts united by our passion for innovation.
+              We&apos;re a diverse group of AI researchers, engineers, and business experts united by our passion for innovation.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -170,7 +170,7 @@ export default function About() {
                 <Lightbulb className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Innovation</h3>
-              <p className="text-gray-600">We constantly push the boundaries of what's possible with AI technology.</p>
+              <p className="text-gray-600">We constantly push the boundaries of what&apos;s possible with AI technology.</p>
             </div>
             <div className="text-center p-6">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">

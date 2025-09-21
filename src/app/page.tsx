@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Users, BarChart3, Zap, Shield, Globe, Headphones } from 'lucide-react';
+import { ArrowRight, Users, BarChart3, Zap, Shield, Headphones } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -154,7 +154,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-8 rounded-lg">
               <p className="text-gray-600 mb-4">
-                "Callisto transformed our data processing capabilities. We've seen a 300% improvement in efficiency."
+                &quot;Callisto transformed our data processing capabilities. We&apos;ve seen a 300% improvement in efficiency.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
             <div className="bg-gray-50 p-8 rounded-lg">
               <p className="text-gray-600 mb-4">
-                "The automation features saved us 20 hours per week. ROI was achieved in the first month."
+                &quot;The automation features saved us 20 hours per week. ROI was achieved in the first month.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
@@ -182,7 +182,7 @@ export default function Home() {
             </div>
             <div className="bg-gray-50 p-8 rounded-lg">
               <p className="text-gray-600 mb-4">
-                "Outstanding customer support and the platform is incredibly intuitive to use."
+                &quot;Outstanding customer support and the platform is incredibly intuitive to use.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
