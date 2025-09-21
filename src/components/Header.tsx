@@ -65,35 +65,126 @@ const Header = () => {
                   Software
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] bg-white rounded-lg shadow-lg border">
-                    <li className="row-span-3">
+                  <div className="w-[600px] p-6 bg-white rounded-lg shadow-lg border">
+                    <div className="space-y-4">
+                      {/* Featured Case Study */}
                       <NavigationMenuLink asChild>
                         <Link
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-50 to-blue-100 p-6 no-underline outline-none focus:shadow-md"
+                          className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors"
                           href="/software/ai-platform"
                         >
-                          <div className="mb-2 mt-4 text-lg font-medium">
-                            AI Platform
+                          <div className="flex-shrink-0">
+                            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                <span className="text-blue-600 font-bold text-lg">AI</span>
+                              </div>
+                            </div>
                           </div>
-                          <p className="text-sm leading-tight text-gray-600">
-                            Comprehensive AI platform for enterprise automation, analytics, and intelligent decision making.
-                          </p>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                              AI Platform
+                            </h3>
+                            <p className="text-sm text-gray-600 mt-1">
+                              Comprehensive AI platform for enterprise automation, analytics, and intelligent decision making. Transform your business with cutting-edge AI technology.
+                            </p>
+                            <div className="mt-2 flex items-center text-xs text-blue-600 font-medium">
+                              Learn More →
+                            </div>
+                          </div>
                         </Link>
                       </NavigationMenuLink>
-                    </li>
-                    <ListItem href="/software/ai-platform" title="AI Platform">
-                      Complete AI solution for your business needs
-                    </ListItem>
-                    <ListItem href="/software/analytics" title="Analytics Suite">
-                      Advanced data analytics and insights platform
-                    </ListItem>
-                    <ListItem href="/software/automation" title="Automation Engine">
-                      Intelligent workflow automation tools
-                    </ListItem>
-                    <ListItem href="/software/integration" title="Integration Hub">
-                      Seamless third-party integrations and APIs
-                    </ListItem>
-                  </ul>
+
+                      {/* Other Options */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <NavigationMenuLink asChild>
+                          <Link
+                            className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                            href="/software/analytics"
+                          >
+                            <div className="flex-shrink-0">
+                              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center">
+                                <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                                  <span className="text-green-600 font-bold text-sm">📊</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
+                                Analytics Suite
+                              </h4>
+                              <p className="text-xs text-gray-600 mt-1">
+                                Advanced data analytics and insights platform.
+                              </p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+
+                        <NavigationMenuLink asChild>
+                          <Link
+                            className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                            href="/software/automation"
+                          >
+                            <div className="flex-shrink-0">
+                              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
+                                <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                                  <span className="text-orange-600 font-bold text-sm">⚡</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
+                                Automation Engine
+                              </h4>
+                              <p className="text-xs text-gray-600 mt-1">
+                                Intelligent workflow automation tools.
+                              </p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+
+                        <NavigationMenuLink asChild>
+                          <Link
+                            className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                            href="/software/integration"
+                          >
+                            <div className="flex-shrink-0">
+                              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+                                <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                                  <span className="text-purple-600 font-bold text-sm">🔗</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
+                                Integration Hub
+                              </h4>
+                              <p className="text-xs text-gray-600 mt-1">
+                                Seamless third-party integrations.
+                              </p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+
+                        <div className="group flex items-start space-x-3 p-3 rounded-lg bg-gray-50">
+                          <div className="flex-shrink-0">
+                            <div className="w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-600 rounded-lg flex items-center justify-center">
+                              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                                <span className="text-gray-600 font-bold text-sm">🔒</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-semibold text-gray-500">
+                              Security Suite
+                            </h4>
+                            <p className="text-xs text-gray-400 mt-1">
+                              Coming Soon
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
@@ -103,32 +194,126 @@ const Header = () => {
                   Industries
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] bg-white rounded-lg shadow-lg border">
-                    <li className="row-span-3">
+                  <div className="w-[600px] p-6 bg-white rounded-lg shadow-lg border">
+                    <div className="space-y-4">
+                      {/* Featured Case Study */}
                       <NavigationMenuLink asChild>
-                        <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-gray-50 to-gray-100 p-6 no-underline outline-none focus:shadow-md">
-                          <div className="mb-2 mt-4 text-lg font-medium">
-                            Industries
+                        <Link
+                          className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors"
+                          href="/industries/healthcare"
+                        >
+                          <div className="flex-shrink-0">
+                            <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                <span className="text-emerald-600 font-bold text-lg">🏥</span>
+                              </div>
+                            </div>
                           </div>
-                          <p className="text-sm leading-tight text-gray-600">
-                            Industry-specific AI solutions for your sector.
-                          </p>
-                        </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                              Healthcare Solutions
+                            </h3>
+                            <p className="text-sm text-gray-600 mt-1">
+                              AI solutions for medical diagnosis and patient care to improve healthcare outcomes. Revolutionize healthcare with intelligent automation.
+                            </p>
+                            <div className="mt-2 flex items-center text-xs text-emerald-600 font-medium">
+                              Learn More →
+                            </div>
+                          </div>
+                        </Link>
                       </NavigationMenuLink>
-                    </li>
-                    <ListItem href="/industries/healthcare" title="Healthcare">
-                      AI solutions for medical diagnosis and patient care
-                    </ListItem>
-                    <ListItem href="/industries/finance" title="Financial Services">
-                      Risk assessment and fraud detection systems
-                    </ListItem>
-                    <ListItem href="/industries/manufacturing" title="Manufacturing">
-                      Predictive maintenance and quality control
-                    </ListItem>
-                    <ListItem href="/industries/retail" title="Retail & E-commerce">
-                      Customer insights and inventory optimization
-                    </ListItem>
-                  </ul>
+
+                      {/* Other Options */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <NavigationMenuLink asChild>
+                          <Link
+                            className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                            href="/industries/finance"
+                          >
+                            <div className="flex-shrink-0">
+                              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                                <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                                  <span className="text-blue-600 font-bold text-sm">💰</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                Financial Services
+                              </h4>
+                              <p className="text-xs text-gray-600 mt-1">
+                                Risk assessment and fraud detection systems.
+                              </p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+
+                        <NavigationMenuLink asChild>
+                          <Link
+                            className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                            href="/industries/manufacturing"
+                          >
+                            <div className="flex-shrink-0">
+                              <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+                                <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                                  <span className="text-amber-600 font-bold text-sm">🏭</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-amber-600 transition-colors">
+                                Manufacturing
+                              </h4>
+                              <p className="text-xs text-gray-600 mt-1">
+                                Predictive maintenance and quality control.
+                              </p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+
+                        <NavigationMenuLink asChild>
+                          <Link
+                            className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                            href="/industries/retail"
+                          >
+                            <div className="flex-shrink-0">
+                              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg flex items-center justify-center">
+                                <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                                  <span className="text-pink-600 font-bold text-sm">🛍️</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-pink-600 transition-colors">
+                                Retail & E-commerce
+                              </h4>
+                              <p className="text-xs text-gray-600 mt-1">
+                                Customer insights and inventory optimization.
+                              </p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+
+                        <div className="group flex items-start space-x-3 p-3 rounded-lg bg-gray-50">
+                          <div className="flex-shrink-0">
+                            <div className="w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-600 rounded-lg flex items-center justify-center">
+                              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                                <span className="text-gray-600 font-bold text-sm">🚀</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-semibold text-gray-500">
+                              Technology
+                            </h4>
+                            <p className="text-xs text-gray-400 mt-1">
+                              Coming Soon
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
