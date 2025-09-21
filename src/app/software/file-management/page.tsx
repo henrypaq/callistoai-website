@@ -1,4 +1,5 @@
 import { HeroSection } from '@/components/ui/hero-section-1'
+import { ProblemSolutionSection } from '@/components/ui/problem-solution-section'
 import { Testimonial } from '@/components/ui/testimonial'
 import { FeatureShowcase } from '@/components/ui/feature-showcase'
 import { Feature108 } from '@/components/ui/shadcnblocks-com-feature108'
@@ -7,7 +8,10 @@ export default function FileManagementPage() {
   return (
     <div className="min-h-screen bg-white">
       <HeroSection />
-      
+
+      {/* Problem vs Solution Section */}
+      <ProblemSolutionSection />
+
       {/* Feature Showcase 1 - AI-Powered Organization */}
       <FeatureShowcase
         title="AI-Powered File Organization"
