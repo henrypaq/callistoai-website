@@ -1,5 +1,6 @@
 import { HeroSection } from '@/components/ui/hero-section-1'
 import { ProblemSolutionSection } from '@/components/ui/problem-solution-section'
+import { ComparisonSection } from '@/components/ui/comparison-section'
 import { IntegrationsSection } from '@/components/ui/integrations-section'
 import { Testimonial } from '@/components/ui/testimonial'
 import { FeatureShowcase } from '@/components/ui/feature-showcase'
@@ -12,6 +13,9 @@ export default function FileManagementPage() {
 
       {/* Problem vs Solution Section */}
       <ProblemSolutionSection />
+
+      {/* Comparison Section */}
+      <ComparisonSection />
 
       {/* Feature Showcase 1 - AI-Powered Organization */}
       <FeatureShowcase
