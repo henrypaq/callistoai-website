@@ -1,17 +1,49 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleDropdown = (dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  };
 
   return (
     <header className="bg-white shadow-sm border-b">
@@ -25,90 +57,114 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {/* Software Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => toggleDropdown('software')}
-                className="flex items-center text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium"
-              >
-                Software
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              {activeDropdown === 'software' && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border z-50">
-                  <Link
-                    href="/software/ai-platform"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    AI Platform
-                  </Link>
-                </div>
-              )}
-            </div>
+          <NavigationMenu className="hidden md:flex">
+            <NavigationMenuList>
+              {/* Software Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-gray-700 hover:text-gray-900">
+                  Software
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-50 to-blue-100 p-6 no-underline outline-none focus:shadow-md"
+                          href="/software/ai-platform"
+                        >
+                          <div className="mb-2 mt-4 text-lg font-medium">
+                            AI Platform
+                          </div>
+                          <p className="text-sm leading-tight text-gray-600">
+                            Comprehensive AI platform for enterprise automation, analytics, and intelligent decision making.
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <ListItem href="/software/ai-platform" title="AI Platform">
+                      Complete AI solution for your business needs
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            {/* Industries Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => toggleDropdown('industries')}
-                className="flex items-center text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium"
-              >
-                Industries
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              {activeDropdown === 'industries' && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border z-50">
-                  <div className="px-4 py-2 text-sm text-gray-500">Coming Soon</div>
-                </div>
-              )}
-            </div>
+              {/* Industries Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-gray-700 hover:text-gray-900">
+                  Industries
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild>
+                        <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-gray-50 to-gray-100 p-6 no-underline outline-none focus:shadow-md">
+                          <div className="mb-2 mt-4 text-lg font-medium">
+                            Industries
+                          </div>
+                          <p className="text-sm leading-tight text-gray-600">
+                            Industry-specific AI solutions coming soon.
+                          </p>
+                        </div>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <div className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100">
+                        <div className="text-sm font-medium leading-none">Coming Soon</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-gray-500">
+                          Industry-specific solutions are in development
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            {/* Use Cases Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => toggleDropdown('use-cases')}
-                className="flex items-center text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium"
-              >
-                Use Cases
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              {activeDropdown === 'use-cases' && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border z-50">
-                  <Link
-                    href="/use-cases/automation"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Process Automation
-                  </Link>
-                  <Link
-                    href="/use-cases/analytics"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Data Analytics
-                  </Link>
-                  <Link
-                    href="/use-cases/customer-service"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Customer Service
-                  </Link>
-                </div>
-              )}
-            </div>
+              {/* Use Cases Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-gray-700 hover:text-gray-900">
+                  Use Cases
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    <ListItem
+                      title="Process Automation"
+                      href="/use-cases/automation"
+                    >
+                      Streamline repetitive tasks and workflows with intelligent automation.
+                    </ListItem>
+                    <ListItem
+                      title="Data Analytics"
+                      href="/use-cases/analytics"
+                    >
+                      Transform raw data into actionable insights with AI-powered analytics.
+                    </ListItem>
+                    <ListItem
+                      title="Customer Service"
+                      href="/use-cases/customer-service"
+                    >
+                      Deliver exceptional customer experiences with AI-powered support.
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <Link
-              href="/about"
-              className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium"
-            >
-              Contact
-            </Link>
-          </nav>
+              <NavigationMenuItem>
+                <Link href="/about" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900")}>
+                    About
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/contact" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900")}>
+                    Contact
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           {/* Right side buttons */}
           <div className="hidden md:flex items-center space-x-4">
