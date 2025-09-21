@@ -1,5 +1,6 @@
 import { HeroSection } from '@/components/ui/hero-section-1'
 import { ProblemSolutionSection } from '@/components/ui/problem-solution-section'
+import { IntegrationsSection } from '@/components/ui/integrations-section'
 import { Testimonial } from '@/components/ui/testimonial'
 import { FeatureShowcase } from '@/components/ui/feature-showcase'
 import { Feature108 } from '@/components/ui/shadcnblocks-com-feature108'
@@ -63,6 +64,9 @@ export default function FileManagementPage() {
 
       {/* Interactive Feature Tabs Section */}
       <Feature108 />
+
+      {/* Integrations Section */}
+      <IntegrationsSection />
       
       {/* Testimonial Section */}
       <section className="bg-gray-50">
