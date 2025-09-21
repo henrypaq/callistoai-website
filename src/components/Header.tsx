@@ -67,32 +67,32 @@ const Header = () => {
                 <NavigationMenuContent>
                   <div className="w-[600px] p-6 bg-white rounded-lg shadow-lg border">
                     <div className="space-y-4">
-                      {/* Featured Case Study */}
-                      <NavigationMenuLink asChild>
-                        <Link
-                          className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors"
-                          href="/software/ai-platform"
-                        >
-                          <div className="flex-shrink-0">
-                            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                                <span className="text-blue-600 font-bold text-lg">AI</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                              AI Platform
-                            </h3>
-                            <p className="text-sm text-gray-600 mt-1">
-                              Comprehensive AI platform for enterprise automation, analytics, and intelligent decision making. Transform your business with cutting-edge AI technology.
-                            </p>
-                            <div className="mt-2 flex items-center text-xs text-blue-600 font-medium">
-                              Learn More →
-                            </div>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
+                              {/* Featured Case Study */}
+                              <NavigationMenuLink asChild>
+                                <Link
+                                  className="group flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors"
+                                  href="/software/file-management"
+                                >
+                                  <div className="flex-shrink-0">
+                                    <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                                      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                        <span className="text-blue-600 font-bold text-lg">📁</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                      File Management System
+                                    </h3>
+                                    <p className="text-sm text-gray-600 mt-1">
+                                      Advanced file organization and management system with AI-powered categorization, search, and collaboration features. Streamline your document workflow.
+                                    </p>
+                                    <div className="mt-2 flex items-center text-xs text-blue-600 font-medium">
+                                      Learn More →
+                                    </div>
+                                  </div>
+                                </Link>
+                              </NavigationMenuLink>
 
                       {/* Other Options */}
                       <div className="grid grid-cols-2 gap-3">
@@ -405,12 +405,12 @@ const Header = () => {
                 <div className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">
                   Software
                 </div>
-                <Link
-                  href="/software/ai-platform"
-                  className="block px-6 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md"
-                >
-                  AI Platform
-                </Link>
+                        <Link
+                          href="/software/file-management"
+                          className="block px-6 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+                        >
+                          File Management System
+                        </Link>
               </div>
               
               <div className="space-y-1">
