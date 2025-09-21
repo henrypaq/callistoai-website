@@ -65,7 +65,7 @@ const Header = () => {
                   Software
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
+                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] bg-white rounded-lg shadow-lg border">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link
@@ -84,6 +84,15 @@ const Header = () => {
                     <ListItem href="/software/ai-platform" title="AI Platform">
                       Complete AI solution for your business needs
                     </ListItem>
+                    <ListItem href="/software/analytics" title="Analytics Suite">
+                      Advanced data analytics and insights platform
+                    </ListItem>
+                    <ListItem href="/software/automation" title="Automation Engine">
+                      Intelligent workflow automation tools
+                    </ListItem>
+                    <ListItem href="/software/integration" title="Integration Hub">
+                      Seamless third-party integrations and APIs
+                    </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -94,7 +103,7 @@ const Header = () => {
                   Industries
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
+                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] bg-white rounded-lg shadow-lg border">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-gray-50 to-gray-100 p-6 no-underline outline-none focus:shadow-md">
@@ -102,19 +111,23 @@ const Header = () => {
                             Industries
                           </div>
                           <p className="text-sm leading-tight text-gray-600">
-                            Industry-specific AI solutions coming soon.
+                            Industry-specific AI solutions for your sector.
                           </p>
                         </div>
                       </NavigationMenuLink>
                     </li>
-                    <li>
-                      <div className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100">
-                        <div className="text-sm font-medium leading-none">Coming Soon</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-gray-500">
-                          Industry-specific solutions are in development
-                        </p>
-                      </div>
-                    </li>
+                    <ListItem href="/industries/healthcare" title="Healthcare">
+                      AI solutions for medical diagnosis and patient care
+                    </ListItem>
+                    <ListItem href="/industries/finance" title="Financial Services">
+                      Risk assessment and fraud detection systems
+                    </ListItem>
+                    <ListItem href="/industries/manufacturing" title="Manufacturing">
+                      Predictive maintenance and quality control
+                    </ListItem>
+                    <ListItem href="/industries/retail" title="Retail & E-commerce">
+                      Customer insights and inventory optimization
+                    </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -125,7 +138,7 @@ const Header = () => {
                   Use Cases
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-lg shadow-lg border">
                     <ListItem
                       title="Process Automation"
                       href="/use-cases/automation"
@@ -143,6 +156,12 @@ const Header = () => {
                       href="/use-cases/customer-service"
                     >
                       Deliver exceptional customer experiences with AI-powered support.
+                    </ListItem>
+                    <ListItem
+                      title="Predictive Modeling"
+                      href="/use-cases/predictive-modeling"
+                    >
+                      Build accurate predictive models for business forecasting.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
