@@ -1,7 +1,7 @@
 import { HeroSection } from '@/components/ui/hero-section-1'
 import { Testimonial } from '@/components/ui/testimonial'
 import { FeatureShowcase } from '@/components/ui/feature-showcase'
-import RuixenFeaturedImageSection from '@/components/ui/ruixen-featured-image-section'
+import { Feature108 } from '@/components/ui/shadcnblocks-com-feature108'
 
 export default function FileManagementPage() {
   return (
@@ -57,8 +57,8 @@ export default function FileManagementPage() {
         backgroundColor="bg-white"
       />
 
-      {/* Interactive Feature Toggle Section */}
-      <RuixenFeaturedImageSection />
+      {/* Interactive Feature Tabs Section */}
+      <Feature108 />
       
       {/* Testimonial Section */}
       <section className="bg-gray-50">
