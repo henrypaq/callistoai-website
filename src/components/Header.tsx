@@ -149,19 +149,19 @@ const Header = () => {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900 bg-white")}>
+                <NavigationMenuLink asChild>
+                  <Link href="/about" className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900 bg-white")}>
                     About
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900 bg-white")}>
+                <NavigationMenuLink asChild>
+                  <Link href="/contact" className={cn(navigationMenuTriggerStyle(), "text-gray-700 hover:text-gray-900 bg-white")}>
                     Contact
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
