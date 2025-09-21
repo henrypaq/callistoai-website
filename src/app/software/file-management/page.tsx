@@ -14,9 +14,6 @@ export default function FileManagementPage() {
       {/* Problem vs Solution Section */}
       <ProblemSolutionSection />
 
-      {/* Comparison Section */}
-      <ComparisonSection />
-
       {/* Feature Showcase 1 - AI-Powered Organization */}
       <FeatureShowcase
         title="AI-Powered File Organization"
@@ -66,11 +63,14 @@ export default function FileManagementPage() {
         backgroundColor="bg-white"
       />
 
+      {/* Integrations Section */}
+      <IntegrationsSection />
+
       {/* Interactive Feature Tabs Section */}
       <Feature108 />
 
-      {/* Integrations Section */}
-      <IntegrationsSection />
+      {/* Comparison Section */}
+      <ComparisonSection />
       
       {/* Testimonial Section */}
       <section className="bg-gray-50">
@@ -81,18 +81,6 @@ export default function FileManagementPage() {
           authorName="Sarah Johnson"
           authorPosition="CTO, TechCorp"
           authorImage="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
-        />
-      </section>
-
-      {/* Additional Testimonial */}
-      <section className="bg-white">
-        <Testimonial
-          companyLogo="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=60&fit=crop&crop=center"
-          quote="The intelligent search and collaboration features in this file management solution have transformed our team's productivity. Highly recommended!"
-          highlightedText="intelligent search and collaboration features"
-          authorName="Michael Chen"
-          authorPosition="Head of Operations, DataFlow Inc"
-          authorImage="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
         />
       </section>
     </div>
