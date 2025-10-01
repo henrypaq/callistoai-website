@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#0A0F1C] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1">
             <h3 className="text-2xl font-bold mb-4">Callisto</h3>
             <p className="text-gray-300 mb-4 max-w-md">
               Empowering businesses with AI-driven solutions for automation, analytics, and intelligent decision making.
@@ -29,7 +29,7 @@ const Footer = () => {
 
           {/* Product Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Product</h4>
+            <h4 className="text-lg font-semibold mb-4 text-blue-400">Product</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/software/ai-platform" className="text-gray-300 hover:text-white">
@@ -51,12 +51,17 @@ const Footer = () => {
                   Customer Service
                 </Link>
               </li>
+              <li>
+                <Link href="/software/file-management" className="text-gray-300 hover:text-white">
+                  File Management (FMS)
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Company Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Company</h4>
+            <h4 className="text-lg font-semibold mb-4 text-purple-400">Company</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="text-gray-300 hover:text-white">
@@ -77,6 +82,33 @@ const Footer = () => {
                 <a href="#" className="text-gray-300 hover:text-white">
                   Careers
                 </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources / Updates */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-pink-400">Resources</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/blog" className="text-gray-300 hover:text-white">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/updates" className="text-gray-300 hover:text-white">
+                  Updates
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="text-gray-300 hover:text-white">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/download" className="text-gray-300 hover:text-white">
+                  Download
+                </Link>
               </li>
             </ul>
           </div>
