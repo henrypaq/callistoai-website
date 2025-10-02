@@ -105,12 +105,6 @@ export default function InstallationSteps() {
           ))}
         </motion.div>
 
-        {/* Get Started button */}
-        <div className="mt-12 text-center">
-          <a href="/book-demo" className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-lg font-semibold rounded-lg transition-colors shadow-lg">
-            Get Started
-          </a>
-        </div>
       </div>
     </section>
   );

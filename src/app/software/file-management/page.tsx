@@ -14,8 +14,10 @@ export default function FileManagementPage() {
       <FmsHero />
 
       {/* 2. Problem + Solution */}
+      <div className="py-16" />
       <ProblemSolution />
       {/* 4. Features */}
+      <div className="py-16" />
       <Features />
       {/* 5. Integrations */}
       <Integrations />
@@ -32,7 +34,7 @@ export default function FileManagementPage() {
       <div className="py-8" />
       <ToggleOptions />
       {/* 10. CTA Section */}
-      <div className="py-8" />
+      <div className="py-24" />
       <CtaSection />
       {/* 11. Footer is global via layout */}
     </main>
