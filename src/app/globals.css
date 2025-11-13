@@ -2,17 +2,40 @@
 /* Optional animation lib was causing build issues when missing. Remove unless installed. */
 /* @import "tw-animate-css"; */
 
+/* Abolition Font - Uncomment and add font file paths if you have the font files */
+/* 
+@font-face {
+  font-family: 'Abolition';
+  src: url('/fonts/Abolition-Regular.woff2') format('woff2'),
+       url('/fonts/Abolition-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --radius: 1rem;
   --primary: oklch(0.64 0.22 265);
+  --font-heading: var(--font-heading-raw);
+  --font-body: var(--font-body-raw);
+  
+  /* Hero Figma Variables */
+  --dark-10: rgba(26, 26, 26, 1);
+  --dark-11: rgba(26, 27, 31, 1);
+  --dark-20: rgba(51, 51, 51, 1);
+  --light-90: rgba(225, 228, 235, 1);
+  --light-97: rgba(246, 247, 249, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-heading: var(--font-heading-raw);
+  --font-body: var(--font-body-raw);
+  --font-sans: var(--font-body-raw);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -37,7 +60,60 @@
 body {
   background: #0A0F1C;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+/* Section headers use Archivo font */
+.section-header {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Hero headline uses Archivo font */
+.hero-headline {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+p,
+span,
+li,
+a,
+label,
+small,
+blockquote {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
 /* Glassmorphism utility classes */
@@ -63,4 +139,129 @@ body {
   transition: transform 220ms ease, opacity 220ms ease;
   display: flex;
   align-items: stretch;
+}
+
+/* Hero Figma Animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes metallic-shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(200%) translateY(200%) rotate(45deg);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+/* Custom Scrollbar Styles */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Thin scrollbar for suite container */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
 }

@@ -1,4 +1,4 @@
-export default function AIPlatform() {
+export default function Retail() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center py-20">
       <div className="max-w-2xl mx-auto px-6 text-center">
@@ -18,3 +18,4 @@ export default function AIPlatform() {
     </div>
   );
 }
+
