@@ -57,6 +57,11 @@
   }
 }
 
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 body {
   background: #0A0F1C;
   color: var(--foreground);
@@ -64,6 +69,8 @@ body {
   font-weight: 400;
   line-height: 1.55;
   letter-spacing: 0.01em;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 h1,
