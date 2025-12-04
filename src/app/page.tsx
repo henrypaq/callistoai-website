@@ -713,20 +713,12 @@ export default function Home() {
                 <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mb-8">
                   Tell us where you lose time and what you wish would be easier in your day to day operations
                 </p>
-                <div className="flex flex-col gap-4 sm:flex-row">
-                  <a
-                    href="/book-demo"
-                    className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white bg-transparent border-2 border-white/80 transition-all duration-300 hover:bg-white hover:text-gray-900 hover:border-white hover:scale-105 hover:shadow-lg"
-                  >
-                    Request a demo
-                  </a>
-                  <a
-                    href="/book-consultation"
-                    className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-gray-900 bg-white border-2 border-white transition-all duration-300 hover:bg-gray-50 hover:scale-105 hover:shadow-lg"
-                  >
-                    Book a consultation
-                  </a>
-                </div>
+                <a
+                  href="/book-demo"
+                  className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-gray-900 bg-white border-2 border-white transition-all duration-300 hover:bg-gray-50 hover:scale-105 hover:shadow-lg"
+                >
+                  See Your Demo
+                </a>
               </div>
             </div>
           </FadeInSection>

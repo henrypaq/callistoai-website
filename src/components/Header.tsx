@@ -52,7 +52,8 @@ const Header = () => {
   const isResourcesPage = pathname?.startsWith('/resources');
   const isAboutPage = pathname?.startsWith('/about');
   const isContactPage = pathname?.startsWith('/contact');
-  const useLightText = (isHomePage && !isScrolled) || isAboutPage || isContactPage;
+  const isBookDemoPage = pathname?.startsWith('/book-demo');
+  const useLightText = (isHomePage && !isScrolled) || isAboutPage || isContactPage || isBookDemoPage;
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -83,7 +84,7 @@ const Header = () => {
 
   const backgroundClass = isAboutPage
     ? "bg-black border-b border-gray-800 shadow-[0_1px_4px_rgba(0,0,0,0.3)]"
-    : isContactPage
+    : isContactPage || isBookDemoPage
       ? "bg-transparent border-b border-transparent"
       : isResourcesPage
         ? "bg-white border-b border-gray-100 shadow-[0_1px_4px_rgba(15,23,42,0.08)]"
@@ -103,7 +104,10 @@ const Header = () => {
       style={isHomePage && !isScrolled ? { backgroundColor: 'transparent' } : undefined}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className={cn(
+          "flex items-center justify-between h-16 pt-2",
+          isHomePage && isScrolled && "pb-2"
+        )}>
           {/* Logo and Navigation */}
           <div className="flex items-center gap-8">
             <div className="flex-shrink-0 flex items-center gap-3">
@@ -140,7 +144,7 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className={cn(
-                    "bg-transparent px-6 py-3 rounded-md transition-colors hover:bg-transparent group",
+                    "bg-transparent px-6 py-3 rounded-md transition-colors hover:bg-transparent group text-base font-medium",
                     (isHomePage && !isScrolled)
                       ? "text-gray-900 hover:text-gray-700"
                       : useLightText
@@ -270,7 +274,7 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className={cn(
-                    "bg-transparent px-6 py-3 rounded-md transition-colors hover:bg-transparent group",
+                    "bg-transparent px-6 py-3 rounded-md transition-colors hover:bg-transparent group text-base font-medium",
                     (isHomePage && !isScrolled)
                       ? "text-gray-900 hover:text-gray-700"
                       : useLightText
@@ -402,7 +406,7 @@ const Header = () => {
                   <Link
                     href="/resources"
                     className={cn(
-                      "bg-transparent px-6 py-3 rounded-md transition-colors hover:bg-transparent group",
+                      "bg-transparent px-6 py-3 rounded-md transition-colors hover:bg-transparent group text-base font-medium",
                       (isHomePage && !isScrolled)
                         ? "text-gray-900 hover:text-gray-700"
                         : useLightText
@@ -422,7 +426,7 @@ const Header = () => {
                   <Link
                     href="/about"
                     className={cn(
-                      "bg-transparent px-6 py-3 rounded-md transition-colors hover:bg-transparent group",
+                      "bg-transparent px-6 py-3 rounded-md transition-colors hover:bg-transparent group text-base font-medium",
                       (isHomePage && !isScrolled)
                         ? "text-gray-900 hover:text-gray-700"
                         : useLightText
@@ -446,7 +450,7 @@ const Header = () => {
             <Link
               href="/contact"
               className={cn(
-                "relative bg-transparent px-5 py-2.5 rounded-md transition-all duration-300 hover:bg-transparent group hover:scale-105",
+                "relative bg-transparent px-5 py-2.5 rounded-md transition-all duration-300 hover:bg-transparent group hover:scale-105 text-base font-medium",
                 (isHomePage && !isScrolled)
                   ? "text-white hover:text-white/90"
                   : useLightText
@@ -459,15 +463,17 @@ const Header = () => {
               </span>
             </Link>
             <Link
-              href="/book-consultation"
+              href="/book-demo"
               className={cn(
-                "inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border-2 hover:scale-105 hover:shadow-lg",
+                "inline-flex items-center justify-center px-5 py-2.5 rounded-full text-base font-medium transition-all duration-300 border-2 hover:scale-105 hover:shadow-lg",
                 (isHomePage && !isScrolled)
                   ? "text-white bg-transparent border-white/80 hover:border-white hover:bg-white hover:text-gray-900"
-                  : "text-gray-900 bg-transparent border-gray-900 hover:border-gray-900 hover:bg-gray-900 hover:text-white"
+                  : useLightText
+                    ? "text-white bg-transparent border-white/80 hover:border-white hover:bg-white hover:text-gray-900"
+                    : "text-gray-900 bg-transparent border-gray-900 hover:border-gray-900 hover:bg-gray-900 hover:text-white"
               )}
             >
-              Book a Consultation
+              See Your Demo
             </Link>
           </div>
 
@@ -537,10 +543,10 @@ const Header = () => {
                   Contact
                 </Link>
                 <Link
-                  href="/book-consultation"
+                  href="/book-demo"
                   className="block px-4 py-2 text-base font-semibold rounded-full transition-all duration-300 border-2 text-center text-white bg-transparent border-white/80 hover:border-white hover:bg-white hover:text-gray-900 hover:scale-105 hover:shadow-lg"
                 >
-                  Book a Consultation
+                  See Your Demo
                 </Link>
               </div>
             </div>

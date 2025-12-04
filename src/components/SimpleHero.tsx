@@ -44,23 +44,14 @@ export default function SimpleHero() {
         <p className="text-lg sm:text-xl md:text-2xl text-gray-500 max-w-2xl text-left mt-2">
           Power your business with Callisto's suite of tools, or build a custom platform for your artificial intelligence needs.
         </p>
-      </div>
-      
-      {/* CTA Buttons - Right aligned and lower */}
-      <div className="relative z-10 flex flex-col gap-4 sm:flex-row items-end justify-end pr-4 sm:pr-6 md:pr-8 lg:pr-10 xl:pr-12 mt-10 sm:mt-14 md:mt-16 ml-auto mr-24 sm:mr-32 md:mr-40 lg:mr-48 xl:mr-56">
-        <a
-          href="/book-consultation"
-          className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white bg-gray-900 transition-colors duration-300 hover:bg-gray-700"
-        >
-          Book a Consultation
-        </a>
         <a
           href="/book-demo"
-          className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-gray-900 bg-white border-2 border-gray-900 transition-all duration-300 hover:bg-gray-900 hover:text-white hover:scale-105 hover:shadow-lg"
+          className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white bg-gray-900 transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg mt-6"
         >
-          See a Demo
+          See Your Demo
         </a>
       </div>
+      
     </section>
   );
 }

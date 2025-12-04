@@ -40,6 +40,14 @@ const redHatDisplay = Red_Hat_Display({
 export const metadata: Metadata = {
   title: "Callisto - AI-Powered Business Solutions",
   description: "Empowering businesses with AI-driven solutions for automation, analytics, and intelligent decision making.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/IMG_0075.PNG', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/IMG_0075.PNG',
+  },
 };
 
 export default function RootLayout({
