@@ -18,10 +18,13 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^10.18.0",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.544.0",
     "next": "15.5.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
