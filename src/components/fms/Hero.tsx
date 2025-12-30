@@ -108,6 +108,7 @@ export default function FmsHero() {
               width={1400}
               height={800}
               priority
+              loading="eager"
               className="w-full h-auto"
             />
           </div>

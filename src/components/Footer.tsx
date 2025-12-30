@@ -6,127 +6,130 @@ import { usePathname } from 'next/navigation';
 
 const Footer = () => {
   const pathname = usePathname();
-  const isAboutPage = pathname?.startsWith('/about');
+  const isDarkPage = pathname?.startsWith('/about') || pathname?.startsWith('/software/file-management');
   
   return (
-    <footer className={isAboutPage ? "bg-black text-white w-full" : "bg-white text-gray-900 w-full"}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
-          {/* Logo and Description */}
+    <footer className={isDarkPage ? "bg-black border-t border-gray-800" : "bg-white border-t border-gray-200"}>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+          {/* Brand Section */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
+            <Link href="/" className="flex items-center gap-3 mb-4 group">
               <Image
-                src="/IMG_0075.PNG"
+                src={isDarkPage ? "/logo-removebg-preview.png" : "/IMG_0075.PNG"}
                 alt="Callisto Logo"
                 width={40}
                 height={40}
                 className="object-contain"
               />
-              <span className={isAboutPage ? "text-xl font-semibold text-white uppercase" : "text-xl font-semibold text-gray-900 uppercase"} style={{ fontFamily: 'var(--font-red-hat-display)' }}>Callisto</span>
-            </div>
-            <p className={isAboutPage ? "text-gray-400 text-sm leading-relaxed max-w-xs" : "text-gray-600 text-sm leading-relaxed max-w-xs"}>
-              Callisto is the world&apos;s leading AI platform for transforming business operations.
+              <span 
+                className={isDarkPage ? "text-xl font-bold text-white uppercase" : "text-xl font-bold text-gray-900 uppercase"} 
+                style={{ fontFamily: 'var(--font-red-hat-display)' }}
+              >
+                Callisto
+              </span>
+            </Link>
+            <p className={isDarkPage ? "text-gray-400 text-sm leading-relaxed mb-4" : "text-gray-600 text-sm leading-relaxed mb-4"}>
+              AI-powered business solutions for modern enterprises.
+            </p>
+            <p className={isDarkPage ? "text-gray-500 text-xs" : "text-gray-500 text-xs"}>
+              CallistoAI LLC
             </p>
           </div>
 
-          {/* PRODUCTS Column */}
+          {/* Products */}
           <div>
-            <h4 className={isAboutPage ? "text-sm font-semibold text-white mb-6 uppercase tracking-wide" : "text-sm font-semibold text-gray-900 mb-6 uppercase tracking-wide"}>Products</h4>
+            <h4 className={isDarkPage ? "text-sm font-semibold text-white mb-4 uppercase tracking-wide" : "text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wide"}>
+              Products
+            </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/software/ai-platform" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Get the app
-                </Link>
-              </li>
-              <li>
-                <Link href="/software/ai-platform" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  AI Platform
-                </Link>
-              </li>
-              <li>
-                <Link href="/software/file-management" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
+                <Link 
+                  href="/software/file-management" 
+                  className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+                >
                   File Management
                 </Link>
               </li>
               <li>
-                <Link href="/integrations" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Integrations
+                <Link 
+                  href="/software/analytics" 
+                  className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+                >
+                  Analytics Suite
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Pricing
+                <Link 
+                  href="/software/automation" 
+                  className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+                >
+                  Automation Engine
                 </Link>
               </li>
               <li>
-                <Link href="/account" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Account
+                <Link 
+                  href="/software/ai-platform" 
+                  className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+                >
+                  AI Platform
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* COMPANY Column */}
+          {/* Company */}
           <div>
-            <h4 className={isAboutPage ? "text-sm font-semibold text-white mb-6 uppercase tracking-wide" : "text-sm font-semibold text-gray-900 mb-6 uppercase tracking-wide"}>Company</h4>
+            <h4 className={isDarkPage ? "text-sm font-semibold text-white mb-4 uppercase tracking-wide" : "text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wide"}>
+              Company
+            </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  About Callisto
+                <Link 
+                  href="/about" 
+                  className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+                >
+                  About Us
                 </Link>
               </li>
               <li>
-                <a href="#" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Careers
-                </a>
+                <Link 
+                  href="/contact" 
+                  className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+                >
+                  Contact
+                </Link>
               </li>
               <li>
-                <a href="#" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Press
-                </a>
+                <Link 
+                  href="/book-demo" 
+                  className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+                >
+                  Book a Demo
+                </Link>
               </li>
               <li>
-                <Link href="/contact" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Get in touch
+                <Link 
+                  href="/resources" 
+                  className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+                >
+                  Resources
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* RESOURCES Column */}
+          {/* Connect */}
           <div>
-            <h4 className={isAboutPage ? "text-sm font-semibold text-white mb-6 uppercase tracking-wide" : "text-sm font-semibold text-gray-900 mb-6 uppercase tracking-wide"}>Resources</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/resources" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Support
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Help
-                </Link>
-              </li>
-              <li>
-                <a href="#" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Legals
-                </a>
-              </li>
-              <li>
-                <a href="#" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                  Policies
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* FOLLOW US Column */}
-          <div>
-            <h4 className={isAboutPage ? "text-sm font-semibold text-white mb-6 uppercase tracking-wide" : "text-sm font-semibold text-gray-900 mb-6 uppercase tracking-wide"}>Follow Us</h4>
-            <div className="flex gap-4">
+            <h4 className={isDarkPage ? "text-sm font-semibold text-white mb-4 uppercase tracking-wide" : "text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wide"}>
+              Connect
+            </h4>
+            <div className="flex gap-4 mb-4">
               <a
-                href="#"
-                className={isAboutPage ? "text-gray-400 hover:text-white transition-colors" : "text-gray-600 hover:text-gray-900 transition-colors"}
+                href="https://www.instagram.com/aicallisto/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={isDarkPage ? "text-gray-400 hover:text-white transition-colors" : "text-gray-600 hover:text-gray-900 transition-colors"}
                 aria-label="Instagram"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -134,8 +137,10 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
-                className={isAboutPage ? "text-gray-400 hover:text-white transition-colors" : "text-gray-600 hover:text-gray-900 transition-colors"}
+                href="https://www.linkedin.com/company/callistoai/?viewAsMember=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={isDarkPage ? "text-gray-400 hover:text-white transition-colors" : "text-gray-600 hover:text-gray-900 transition-colors"}
                 aria-label="LinkedIn"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -143,8 +148,10 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
-                className={isAboutPage ? "text-gray-400 hover:text-white transition-colors" : "text-gray-600 hover:text-gray-900 transition-colors"}
+                href="https://www.facebook.com/profile.php?id=61573404442488"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={isDarkPage ? "text-gray-400 hover:text-white transition-colors" : "text-gray-600 hover:text-gray-900 transition-colors"}
                 aria-label="Facebook"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -153,7 +160,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className={isAboutPage ? "text-gray-400 hover:text-white transition-colors" : "text-gray-600 hover:text-gray-900 transition-colors"}
+                className={isDarkPage ? "text-gray-400 hover:text-white transition-colors" : "text-gray-600 hover:text-gray-900 transition-colors"}
                 aria-label="Twitter"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -164,20 +171,26 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright and Legal Links */}
-        <div className={isAboutPage ? "border-t border-gray-800 pt-8" : "border-t border-gray-200 pt-8"}>
+        {/* Bottom Bar */}
+        <div className={isDarkPage ? "border-t border-gray-800 pt-8" : "border-t border-gray-200 pt-8"}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className={isAboutPage ? "text-gray-400 text-sm" : "text-gray-600 text-sm"}>
-              Copyright © 2024 Callisto Inc. All rights reserved.
+            <p className={isDarkPage ? "text-gray-400 text-sm" : "text-gray-600 text-sm"}>
+              © {new Date().getFullYear()} CallistoAI LLC. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
+              <Link 
+                href="#" 
+                className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+              >
                 Privacy Policy
-              </a>
-              <span className={isAboutPage ? "text-gray-600" : "text-gray-400"}>&</span>
-              <a href="#" className={isAboutPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}>
-                Terms of Use
-              </a>
+              </Link>
+              <span className={isDarkPage ? "text-gray-600" : "text-gray-400"}>•</span>
+              <Link 
+                href="#" 
+                className={isDarkPage ? "text-gray-400 hover:text-white text-sm transition-colors" : "text-gray-600 hover:text-gray-900 text-sm transition-colors"}
+              >
+                Terms of Service
+              </Link>
             </div>
           </div>
         </div>

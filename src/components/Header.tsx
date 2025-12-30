@@ -53,7 +53,8 @@ const Header = () => {
   const isAboutPage = pathname?.startsWith('/about');
   const isContactPage = pathname?.startsWith('/contact');
   const isBookDemoPage = pathname?.startsWith('/book-demo');
-  const useLightText = (isHomePage && !isScrolled) || isAboutPage || isContactPage || isBookDemoPage;
+  const isFileManagementPage = pathname?.startsWith('/software/file-management');
+  const useLightText = (isHomePage && !isScrolled) || isAboutPage || isContactPage || isBookDemoPage || isFileManagementPage;
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -105,8 +106,8 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn(
-          "flex items-center justify-between h-16 pt-2",
-          isHomePage && isScrolled && "pb-2"
+          "flex items-center justify-between h-20 py-3",
+          isHomePage && isScrolled && "py-3"
         )}>
           {/* Logo and Navigation */}
           <div className="flex items-center gap-8">
@@ -116,7 +117,7 @@ const Header = () => {
                 className="flex items-center gap-3"
               >
                 <Image
-                  src="/IMG_0075.PNG"
+                  src={useLightText ? "/logo-removebg-preview.png" : "/IMG_0075.PNG"}
                   alt="Callisto Logo"
                   width={40}
                   height={40}
@@ -465,7 +466,7 @@ const Header = () => {
             <Link
               href="/book-demo"
               className={cn(
-                "inline-flex items-center justify-center px-5 py-2.5 rounded-full text-base font-medium transition-all duration-300 border-2 hover:scale-105 hover:shadow-lg",
+                "inline-flex items-center justify-center px-4 py-2 rounded-full text-base font-medium transition-all duration-300 border-2 hover:scale-105 hover:shadow-lg",
                 (isHomePage && !isScrolled)
                   ? "text-white bg-transparent border-white/80 hover:border-white hover:bg-white hover:text-gray-900"
                   : useLightText

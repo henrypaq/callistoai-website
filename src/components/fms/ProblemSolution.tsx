@@ -107,6 +107,7 @@ export default function ProblemSolution() {
                         src="/airinc-ui.png" 
                         alt="Air Inc UI" 
                         className="w-full h-full object-cover rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -132,6 +133,7 @@ export default function ProblemSolution() {
                         src="/demo-ui-placeholder.png" 
                         alt="Callisto UI Demo" 
                         className="w-full h-full object-cover rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -171,6 +173,7 @@ export default function ProblemSolution() {
                         src="/airinc-ui.png" 
                         alt="Air Inc UI" 
                         className="w-full h-full object-cover rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -196,6 +199,7 @@ export default function ProblemSolution() {
                         src="/demo-ui-placeholder.png" 
                         alt="Callisto UI Demo" 
                         className="w-full h-full object-cover rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -235,6 +239,7 @@ export default function ProblemSolution() {
                         src="/airinc-ui.png" 
                         alt="Air Inc UI" 
                         className="w-full h-full object-cover rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -260,6 +265,7 @@ export default function ProblemSolution() {
                         src="/demo-ui-placeholder.png" 
                         alt="Callisto UI Demo" 
                         className="w-full h-full object-cover rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </div>

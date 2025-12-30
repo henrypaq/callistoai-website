@@ -7,6 +7,12 @@ import InstallationSteps from "@/components/fms/InstallationSteps";
 import CtaSection from "@/components/fms/CtaSection";
 import Comparison from "@/components/fms/Comparison";
 import ToggleOptions from "@/components/fms/ToggleOptions";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "File Management System - Callisto",
+  description: "Modern file management without monthly fees. Centralize files, permissions, and workflows in one place.",
+};
 
 export default function FileManagementPage() {
   return (

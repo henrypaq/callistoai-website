@@ -35,6 +35,8 @@ export default function PlatformOverview() {
                   src="/demo-ui-placeholder.png" 
                   alt="Tasks and notes demo interface"
                   className="w-full h-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10" aria-hidden="true" />
               </div>
@@ -62,6 +64,8 @@ export default function PlatformOverview() {
                   src="/demo-ui-placeholder.png" 
                   alt="Nested lists and subtasks demo interface"
                   className="w-full h-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10" aria-hidden="true" />
               </div>
@@ -91,6 +95,7 @@ export default function PlatformOverview() {
                   src="/demo-ui-placeholder.png" 
                   alt="Quick add feature demo"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10" aria-hidden="true" />
               </div>
@@ -117,6 +122,7 @@ export default function PlatformOverview() {
                   src="/demo-ui-placeholder.png" 
                   alt="Recurring tasks feature demo"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10" aria-hidden="true" />
               </div>
@@ -143,6 +149,7 @@ export default function PlatformOverview() {
                   src="/demo-ui-placeholder.png" 
                   alt="Widgets feature demo"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10" aria-hidden="true" />
               </div>

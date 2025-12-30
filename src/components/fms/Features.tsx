@@ -68,6 +68,8 @@ export default function Features() {
                     src="/demo-ui-placeholder.png" 
                     alt={`${feature.title} ${feature.highlight} feature demo`}
                     className="w-full h-full object-cover"
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    fetchPriority={idx === 0 ? "high" : "auto"}
                   />
                   
                   {/* Gradient overlay on image */}
