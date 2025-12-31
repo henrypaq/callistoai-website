@@ -42,11 +42,11 @@ export const metadata: Metadata = {
   description: "Empowering businesses with AI-driven solutions for automation, analytics, and intelligent decision making.",
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/IMG_0075.PNG', type: 'image/png' },
+      { url: '/logo-removebg-preview.png', sizes: 'any', type: 'image/png' },
+      { url: '/logo-removebg-preview.png', type: 'image/png' },
     ],
-    shortcut: '/favicon.ico',
-    apple: '/IMG_0075.PNG',
+    shortcut: '/logo-removebg-preview.png',
+    apple: '/logo-removebg-preview.png',
   },
 };
 
