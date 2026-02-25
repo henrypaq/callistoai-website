@@ -7,9 +7,11 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="relative min-h-screen flex flex-col">
+    <div className="app-layout relative min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow">
+      {/* Dropdown blur overlay - appears when nav dropdown is open */}
+      <div className="nav-blur-overlay" aria-hidden="true" />
+      <main className="main-content flex-grow">
         <div className="w-full">
           {children}
         </div>

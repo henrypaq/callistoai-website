@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Calendar, Clock, Users, CheckCircle2 } from 'lucide-react';
 
 export default function BookDemo() {
-  const calendlyUrl = 'https://calendly.com/callistoai/30min';
+  const calendlyUrl = 'https://calendly.com/callistoai/30min?background_color=ffffff';
 
   return (
     <div className="min-h-screen bg-white">
@@ -36,11 +36,11 @@ export default function BookDemo() {
       </section>
 
       {/* Main Content Area */}
-      <section className="bg-white -mt-32 relative z-20 pb-20">
+      <section className="bg-white -mt-36 relative z-20 pb-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pt-2">
             {/* Sidebar - Left Column with Benefits */}
-            <div className="lg:col-span-1 pt-24">
+            <div className="lg:col-span-1 pt-16">
               <div className="space-y-8">
                 <div>
                   <h3 className="text-sm font-semibold text-gray-900 mb-8 uppercase tracking-wide">
@@ -101,27 +101,17 @@ export default function BookDemo() {
 
             {/* Calendly Embed - Right Column */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-[12px] shadow-xl border border-gray-200 p-8 md:p-10 mt-8 ml-auto relative z-30 max-w-4xl">
-                <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Select a Time</h2>
-                  <p className="text-gray-600">
-                    Choose a time that works best for you. We'll send you a confirmation email with meeting details.
-                  </p>
-                </div>
-                
-                {/* Calendly Embed - Using iframe for reliable loading */}
-                <div className="w-full rounded-lg overflow-hidden" style={{ minHeight: '700px' }}>
-                  <iframe
-                    src={calendlyUrl}
-                    width="100%"
-                    height="700"
-                    frameBorder="0"
-                    title="Schedule a consultation"
-                    className="w-full"
-                    style={{ border: 'none', minHeight: '700px' }}
-                    allow="camera; microphone; geolocation"
-                  />
-                </div>
+              <div className="mt-0 ml-auto relative z-30 max-w-4xl overflow-visible">
+                <iframe
+                  src={calendlyUrl}
+                  width="100%"
+                  height="950"
+                  frameBorder="0"
+                  title="Schedule a consultation"
+                  className="w-full"
+                  style={{ border: 'none' }}
+                  allow="camera; microphone; geolocation"
+                />
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ const Footer = () => {
   const isDarkPage = pathname?.startsWith('/about') || pathname?.startsWith('/software/file-management');
   
   return (
-    <footer className={isDarkPage ? "bg-black border-t border-gray-800" : "bg-white border-t border-gray-200"}>
+    <footer className={isDarkPage ? "bg-black border-t border-gray-800" : "bg-white"}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           {/* Brand Section */}

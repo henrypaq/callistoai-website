@@ -1,4 +1,4 @@
-export default function RetailPage() {
+export default function HomeServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="pt-24 px-6">

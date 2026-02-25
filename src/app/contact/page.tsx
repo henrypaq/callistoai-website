@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ArrowLeft, Mail, Twitter, Facebook, Linkedin, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { AutoSlider } from '@/components/AutoSlider';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -44,8 +45,8 @@ export default function Contact() {
         
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full flex-1 flex flex-col">
-          {/* Headline aligned with form card top */}
-          <div className="max-w-3xl mt-20 lg:mt-24">
+          {/* Headline - moved down and to the right */}
+          <div className="max-w-3xl mt-32 lg:mt-36 ml-8 lg:ml-16">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Contact us
             </h1>
@@ -64,8 +65,8 @@ export default function Contact() {
       <section className="bg-white -mt-24 relative z-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pt-8">
-            {/* Sidebar - Left Column */}
-            <div className="lg:col-span-1 pt-24">
+            {/* Sidebar - Left Column - shifted rightward, closer to top */}
+            <div className="lg:col-span-1 pt-12 pl-8 lg:pl-16">
               <div className="space-y-8">
                 {/* Direct Contact */}
                 <div>
@@ -124,7 +125,7 @@ export default function Contact() {
 
             {/* Contact Form - Right Column - Protruding Card */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-[12px] shadow-xl border border-gray-200 p-8 md:p-10 -mt-52 ml-auto relative z-30 max-w-2xl">
+              <div className="bg-white rounded-[12px] shadow-xl border border-gray-200 p-8 md:p-10 -mt-44 ml-auto relative z-30 max-w-2xl">
                 <div className="flex items-center gap-2 mb-8">
                   <ArrowLeft className="h-5 w-5 text-gray-400" />
                   <h2 className="text-2xl font-bold text-gray-900">Send us a message</h2>
@@ -196,7 +197,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full bg-black text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                    className="w-full bg-black text-white py-3 px-6 rounded-full font-medium hover:bg-gray-800 transition-colors"
                   >
                     Submit
                   </button>
@@ -204,6 +205,66 @@ export default function Contact() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-4xl sm:text-5xl font-semibold text-gray-900 mb-6" style={{ fontFamily: 'var(--font-dm-serif)', letterSpacing: '-0.02em' }}>
+            Ready to get started?
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Tell us where you lose time and what you wish would be easier in your day to day operations.
+          </p>
+          <Link
+            href="/book-demo"
+            className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold text-white bg-black transition-all duration-300 hover:bg-gray-800"
+          >
+            Book a Demo
+          </Link>
+        </div>
+      </section>
+
+      {/* Sliding Logo Section */}
+      <section className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 overflow-hidden">
+          <AutoSlider speed={0.3}>
+            <div className="flex items-center gap-12 sm:gap-16">
+              {[
+                { src: '/built_on/OpenAI_Logo.svg', alt: 'OpenAI', scale: 1 },
+                { src: '/built_on/Webflow_logo_2023.svg', alt: 'Webflow', scale: 1.2 },
+                { src: '/built_on/Slack_Technologies_Logo.svg', alt: 'Slack', scale: 1 },
+                { src: '/built_on/figma-5.svg', alt: 'Figma', scale: 1 },
+                { src: '/built_on/Stripe_Logo,_revised_2016.svg.png', alt: 'Stripe', scale: 0.7 },
+                { src: '/built_on/Anthropic-Logo.wine.png', alt: 'Anthropic', scale: 2.0 },
+                { src: '/built_on/Zapier_logo.svg.png', alt: 'Zapier', scale: 0.85 },
+                { src: '/built_on/Intuit_QuickBooks_logo.svg.png', alt: 'QuickBooks', scale: 1 },
+                { src: '/built_on/notion-logo-png_seeklogo-425508.png', alt: 'Notion', scale: 2.0 },
+                { src: '/built_on/tailwind-css-logo-vector.png', alt: 'Tailwind CSS', scale: 2.0 },
+                { src: '/built_on/Vercel_logo_2025.svg.png', alt: 'Vercel', scale: 0.8 },
+                { src: '/built_on/images-1.png', alt: 'Linear', scale: 1 },
+              ].map((logo, idx) => (
+                <div
+                  key={idx}
+                  className="flex-shrink-0 h-12 w-[120px] flex items-center justify-center min-w-0"
+                >
+                  <div
+                    className="flex items-center justify-center"
+                    style={logo.scale ? { transform: `scale(${logo.scale})` } : undefined}
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={120}
+                      height={48}
+                      className="max-h-12 max-w-[120px] w-auto h-auto object-contain grayscale opacity-40"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AutoSlider>
         </div>
       </section>
     </div>

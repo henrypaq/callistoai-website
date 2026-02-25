@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Geist_Mono, Pacifico, Archivo, Red_Hat_Display } from "next/font/google";
+import { Poppins, Geist_Mono, Pacifico, Archivo, Red_Hat_Display, JetBrains_Mono, Plus_Jakarta_Sans, Inter, TikTok_Sans, Playfair_Display, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout";
 
@@ -37,6 +37,48 @@ const redHatDisplay = Red_Hat_Display({
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const tiktokSans = TikTok_Sans({
+  variable: "--font-tiktok-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif-display",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Callisto - AI-Powered Business Solutions",
   description: "Empowering businesses with AI-driven solutions for automation, analytics, and intelligent decision making.",
@@ -58,7 +100,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${archivo.variable} ${geistMono.variable} ${pacifico.variable} ${redHatDisplay.variable} antialiased`}
+        className={`${poppins.variable} ${archivo.variable} ${geistMono.variable} ${pacifico.variable} ${redHatDisplay.variable} ${jetbrainsMono.variable} ${plusJakartaSans.variable} ${inter.variable} ${tiktokSans.variable} ${playfairDisplay.variable} ${dmSerifDisplay.variable} antialiased`}
       >
         <Layout>{children}</Layout>
       </body>
