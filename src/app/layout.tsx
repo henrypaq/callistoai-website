@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins, Geist_Mono, Pacifico, Archivo, Red_Hat_Display, JetBrains_Mono, Plus_Jakarta_Sans, Inter, TikTok_Sans, Playfair_Display, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout";
+import ComingSoon from "@/components/ComingSoon";
+import { SITE_PAUSE } from "@/lib/site-pause";
 
 // Poppins for body text
 const poppins = Poppins({
@@ -80,8 +82,10 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Callisto - AI-Powered Business Solutions",
-  description: "Empowering businesses with AI-driven solutions for automation, analytics, and intelligent decision making.",
+  title: SITE_PAUSE ? "Callisto" : "Callisto - AI-Powered Business Solutions",
+  description: SITE_PAUSE
+    ? "A new Callisto is on the way. Reach us anytime."
+    : "Empowering businesses with AI-driven solutions for automation, analytics, and intelligent decision making.",
   icons: {
     icon: [
       { url: '/logo-removebg-preview.png', sizes: 'any', type: 'image/png' },
@@ -102,7 +106,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${archivo.variable} ${geistMono.variable} ${pacifico.variable} ${redHatDisplay.variable} ${jetbrainsMono.variable} ${plusJakartaSans.variable} ${inter.variable} ${tiktokSans.variable} ${playfairDisplay.variable} ${dmSerifDisplay.variable} antialiased`}
       >
-        <Layout>{children}</Layout>
+        {SITE_PAUSE ? <ComingSoon /> : <Layout>{children}</Layout>}
       </body>
     </html>
   );
