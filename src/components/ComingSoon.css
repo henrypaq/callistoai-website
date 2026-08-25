@@ -1,0 +1,85 @@
+.site-pause {
+  --ink: #f5f5f7;
+  --muted: #a1a1a6;
+  --apple: var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+  color: var(--ink);
+  background: #1d1d1f;
+  color-scheme: dark;
+  font-family: var(--apple);
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-pause ::selection {
+  background: #f5f5f7;
+  color: #1d1d1f;
+}
+
+.site-pause :focus-visible {
+  outline: 2px solid #f5f5f7;
+  outline-offset: 4px;
+}
+
+.site-pause-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 1.5rem;
+}
+
+.site-pause-moon {
+  width: min(28vmin, 168px);
+  height: min(28vmin, 168px);
+  margin-bottom: 2.25rem;
+}
+
+.site-pause-moon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.92;
+}
+
+.site-pause-center h1 {
+  font-family: var(--apple);
+  font-weight: 600;
+  font-size: clamp(2rem, 5.4vw, 3.5rem);
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+}
+
+.site-pause-center p {
+  font-family: var(--apple);
+  font-size: 1.125rem;
+  line-height: 1.45;
+  margin: 0 0 1.75rem;
+  letter-spacing: -0.016em;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.site-pause-mail {
+  font-family: var(--apple);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.016em;
+  padding: 0.9rem 1.4rem;
+}
+
+.site-pause-mail svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: transform 180ms ease;
+}
+
+.site-pause-mail:hover svg {
+  transform: translateX(3px);
+}
