@@ -1,2 +1,2 @@
-/** Flip to `false` to restore the full marketing site. */
-export const SITE_PAUSE = true;
+/** Flip to `true` to restore the coming-soon screen. */
+export const SITE_PAUSE = false;

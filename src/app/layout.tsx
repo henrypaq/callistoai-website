@@ -1,100 +1,34 @@
 import type { Metadata } from "next";
-import { Poppins, Geist_Mono, Pacifico, Archivo, Red_Hat_Display, JetBrains_Mono, Plus_Jakarta_Sans, Inter, TikTok_Sans, Playfair_Display, DM_Serif_Display } from "next/font/google";
+import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
-import Layout from "@/components/Layout";
-import ComingSoon from "@/components/ComingSoon";
-import { SITE_PAUSE } from "@/lib/site-pause";
+import { TAGLINE } from "@/lib/content";
 
-// Poppins for body text
-const poppins = Poppins({
-  variable: "--font-body-raw",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-// Archivo for headings and hero headlines
-const archivo = Archivo({
-  variable: "--font-heading-raw",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const pacifico = Pacifico({
-  variable: "--font-pacifico",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const redHatDisplay = Red_Hat_Display({
-  variable: "--font-red-hat-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const tiktokSans = TikTok_Sans({
-  variable: "--font-tiktok-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const dmSerifDisplay = DM_Serif_Display({
-  variable: "--font-dm-serif-display",
-  subsets: ["latin"],
-  weight: "400",
+const instrument = localFont({
+  src: "../fonts/instrument-sans.woff2",
+  weight: "400 700",
+  style: "normal",
+  variable: "--font-instrument",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: SITE_PAUSE ? "Callisto" : "Callisto - AI-Powered Business Solutions",
-  description: SITE_PAUSE
-    ? "A new Callisto is on the way. Reach us anytime."
-    : "Empowering businesses with AI-driven solutions for automation, analytics, and intelligent decision making.",
+  title: "callisto",
+  description: TAGLINE,
   icons: {
-    icon: [
-      { url: '/logo-removebg-preview.png', sizes: 'any', type: 'image/png' },
-      { url: '/logo-removebg-preview.png', type: 'image/png' },
-    ],
-    shortcut: '/logo-removebg-preview.png',
-    apple: '/logo-removebg-preview.png',
+    icon: [{ url: "/logo-removebg-preview.png", type: "image/png" }],
+    apple: "/logo-removebg-preview.png",
   },
 };
+
+const CONTRACT = `<!--
+THESIS: A quiet operator colophon on a dark field; refuses the SaaS marketing landing and the oversized moon hero.
+OWN-WORLD: Near-black ground, Instrument Sans, a modest living crescent of orbs with dust, lowercase hairline links, measured rows.
+STORY: A visitor understands Callisto builds and operates software, services and internet businesses, then opens work or notes or writes.
+FIRST VIEWPORT: Flat dark field. Optical-center cluster: 64px orb, then callisto, then the sentence. Bottom: work, notes, contact.
+FORM: Quiet studio colophon (canon). Seed f531ae74.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->`;
 
 export default function RootLayout({
   children,
@@ -102,11 +36,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${poppins.variable} ${archivo.variable} ${geistMono.variable} ${pacifico.variable} ${redHatDisplay.variable} ${jetbrainsMono.variable} ${plusJakartaSans.variable} ${inter.variable} ${tiktokSans.variable} ${playfairDisplay.variable} ${dmSerifDisplay.variable} antialiased`}
-      >
-        {SITE_PAUSE ? <ComingSoon /> : <Layout>{children}</Layout>}
+    <html lang="en" className={instrument.variable}>
+      <body className={instrument.className}>
+        <div hidden dangerouslySetInnerHTML={{ __html: CONTRACT }} />
+        {process.env.NODE_ENV === "development" ? (
+          <Script
+            src="https://mcp.figma.com/mcp/html-to-design/capture.js"
+            strategy="afterInteractive"
+          />
+        ) : null}
+        {children}
       </body>
     </html>
   );
