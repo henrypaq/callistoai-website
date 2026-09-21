@@ -35,7 +35,7 @@ export default async function WorkItemPage({
       <p className="lede">
         {item.kind}
         {item.synthetic ? " · placeholder" : ""}
-        {` · ${item.summary}`}
+        {` · ${item.lede}`}
       </p>
       <div className="body">
         {item.body.map((paragraph) => (

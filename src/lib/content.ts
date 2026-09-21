@@ -1,10 +1,11 @@
-export type WorkKind = "software" | "project";
+export type WorkKind = "software" | "automation";
 
 export type WorkItem = {
   slug: string;
   title: string;
   kind: WorkKind;
   summary: string;
+  lede: string;
   body: string[];
   synthetic?: boolean;
 };
@@ -34,46 +35,38 @@ export const SEO_DESCRIPTION =
 
 export const work: WorkItem[] = [
   {
-    slug: "cortex",
-    title: "cortex",
+    slug: "prefab-commerce",
+    title: "prefab commerce",
     kind: "software",
-    summary: "an intelligence layer for decisions inside an operation.",
+    summary: "a configurator and internal catalogue system for a prefab builder.",
+    lede: "commerce tooling for a prefab builder.",
     body: [
-      "cortex sits on the data a business already has and turns it into something people can act on.",
-      "it is software we build and then stay with: dashboards only where they earn their place, models only where they change a decision.",
+      "we built a customer-facing configurator for choosing models, finishes, foundations, and options, with pricing updated as the configuration changes.",
+      "behind it is a separate internal system for managing products, pricing, images, and the catalogue without touching the code.",
+      "the work also includes the handoff from configuration to quote request and the systems around what happens next.",
     ],
   },
   {
-    slug: "steward",
-    title: "steward",
+    slug: "ecommerce-operations",
+    title: "ecommerce operations",
     kind: "software",
-    summary: "operations that keep moving after the call is missed.",
+    summary: "internal tooling for files, products, and day-to-day operations.",
+    lede: "internal tooling for an ecommerce business.",
     body: [
-      "steward handles the conversations and bookings that used to wait on someone picking up.",
-      "we build it around the actual hours of a service business, then operate it so it stays current.",
+      "the existing workflow spread files, product information, and operational work across different tools.",
+      "we built a lightweight internal system around how the team already worked: organizing files, keeping product information accessible, and reducing the manual movement between systems.",
     ],
   },
   {
-    slug: "ledger",
-    title: "ledger",
-    kind: "project",
-    summary: "a quiet system for following money through a service business.",
+    slug: "service-operations",
+    title: "service operations",
+    kind: "automation",
+    summary: "customer inquiry and operational workflows for a service business.",
+    lede: "customer and operational workflows for a service business.",
     body: [
-      "invoices, collections, and the work they refer to, held in one place.",
-      "this entry is a placeholder so the list can be judged. replace it with a real project when you have one to publish.",
+      "we worked on the systems around incoming customer requests, follow-up, scheduling, and the internal work that happens after a new inquiry.",
+      "the goal was simple: fewer things depending on someone remembering to move them forward manually.",
     ],
-    synthetic: true,
-  },
-  {
-    slug: "switchboard",
-    title: "switchboard",
-    kind: "software",
-    summary: "voice and message handling that stays on after hours.",
-    body: [
-      "a small stack for inbound calls and texts, routed to whoever should see them.",
-      "this entry is a placeholder so the list can be judged. replace it with a real project when you have one to publish.",
-    ],
-    synthetic: true,
   },
 ];
 
