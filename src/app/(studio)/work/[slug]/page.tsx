@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { PageHead } from "@/components/PageHead";
-import { getWork, work } from "@/lib/content";
+import { getWork, work, workLabel } from "@/lib/content";
 
 export function generateStaticParams() {
   return work.map((item) => ({ slug: item.slug }));
@@ -33,9 +33,8 @@ export default async function WorkItemPage({
     <article className="article">
       <PageHead title={item.title} back="/work" />
       <p className="lede">
-        {item.kind}
-        {item.synthetic ? " · placeholder" : ""}
-        {` · ${item.lede}`}
+        {workLabel(item)}
+        {` · ${item.summary}`}
       </p>
       <div className="body">
         {item.body.map((paragraph) => (

@@ -1,11 +1,11 @@
-export type WorkKind = "software" | "automation";
+export type WorkKind = "software" | "project" | "experiment";
 
 export type WorkItem = {
   slug: string;
   title: string;
   kind: WorkKind;
+  status?: string;
   summary: string;
-  lede: string;
   body: string[];
   synthetic?: boolean;
 };
@@ -35,40 +35,53 @@ export const SEO_DESCRIPTION =
 
 export const work: WorkItem[] = [
   {
-    slug: "prefab-commerce",
-    title: "prefab commerce",
+    slug: "frame",
+    title: "frame",
     kind: "software",
-    summary: "a configurator and internal catalogue system for a prefab builder.",
-    lede: "commerce tooling for a prefab builder.",
+    summary: "a configurator for products with more decisions than a form can handle.",
     body: [
-      "we built a customer-facing configurator for choosing models, finishes, foundations, and options, with pricing updated as the configuration changes.",
-      "behind it is a separate internal system for managing products, pricing, images, and the catalogue without touching the code.",
-      "the work also includes the handoff from configuration to quote request and the systems around what happens next.",
+      "frame was built for a prefab building company selling a product that changes with size, layout, finishes and options.",
+      "customers can work through those decisions visually, see the configuration take shape and send the result through as a quote request.",
+      "behind it is a back office for managing products, options, images and pricing without touching the site.",
     ],
   },
   {
-    slug: "ecommerce-operations",
-    title: "ecommerce operations",
+    slug: "vault",
+    title: "vault",
     kind: "software",
-    summary: "internal tooling for files, products, and day-to-day operations.",
-    lede: "internal tooling for an ecommerce business.",
+    summary: "a media library built around how a team actually looks for its files.",
     body: [
-      "the existing workflow spread files, product information, and operational work across different tools.",
-      "we built a lightweight internal system around how the team already worked: organizing files, keeping product information accessible, and reducing the manual movement between systems.",
+      "vault was built for an ecommerce company with a growing archive of product and creative assets.",
+      "files can be uploaded, organized and tagged, including with image recognition, then searched using the language the team already uses to describe the work.",
+      "the result is a faster way to move through a large media library without relying on folder structure or filenames alone.",
     ],
   },
   {
-    slug: "service-operations",
-    title: "service operations",
-    kind: "automation",
-    summary: "customer inquiry and operational workflows for a service business.",
-    lede: "customer and operational workflows for a service business.",
+    slug: "intake",
+    title: "intake",
+    kind: "software",
+    summary: "a single place to get a new client from signed to ready to work.",
     body: [
-      "we worked on the systems around incoming customer requests, follow-up, scheduling, and the internal work that happens after a new inquiry.",
-      "the goal was simple: fewer things depending on someone remembering to move them forward manually.",
+      "intake was designed around an agency onboarding process where starting work meant collecting information, files and access across several different platforms.",
+      "it brings those steps into one place so the team can see what has been provided, what is still missing and what needs attention before work begins.",
+    ],
+  },
+  {
+    slug: "herme5",
+    title: "herme5",
+    kind: "experiment",
+    summary: "an agent for work that should not need another chat window.",
+    body: [
+      "we already have chatgpt to interpret a message, rewrite an email or answer a question.",
+      "herme5 is aimed at the part after that.",
+      "give it a task, let it move between the tools involved, and only bring you back in when something actually needs your input.",
     ],
   },
 ];
+
+export function workLabel(item: WorkItem) {
+  return item.status ? `${item.kind} · ${item.status}` : item.kind;
+}
 
 export const notes: NoteItem[] = [
   {
