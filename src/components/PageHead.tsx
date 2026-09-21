@@ -1,17 +1,19 @@
-import Link from "next/link";
+import { TransitionLink } from "@/components/TransitionLink";
 
 export function PageHead({
   title,
   back,
 }: {
   title: string;
-  back: string;
+  back?: string;
 }) {
   return (
     <div className="page-head">
-      <Link href={back} className="page-back">
-        back
-      </Link>
+      {back ? (
+        <TransitionLink href={back} className="page-back">
+          back
+        </TransitionLink>
+      ) : null}
       <h1>{title}</h1>
     </div>
   );

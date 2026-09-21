@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
-import { TAGLINE } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import { SEO_DESCRIPTION, SITE_URL } from "@/lib/content";
 
 const instrument = localFont({
   src: "../fonts/instrument-sans.woff2",
@@ -13,8 +14,38 @@ const instrument = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "callisto",
-  description: TAGLINE,
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "callisto",
+    template: "%s - callisto",
+  },
+  description: SEO_DESCRIPTION,
+  applicationName: "callisto",
+  keywords: [
+    "callisto",
+    "Callisto AI",
+    "CallistoAI",
+    "Callisto",
+    "operator studio",
+    "software",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: "callisto",
+    title: "callisto",
+    description: SEO_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: "callisto",
+    description: SEO_DESCRIPTION,
+  },
   icons: {
     icon: [{ url: "/logo-removebg-preview.png", type: "image/png" }],
     apple: "/logo-removebg-preview.png",
@@ -38,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={instrument.variable}>
       <body className={instrument.className}>
+        <JsonLd />
         <div hidden dangerouslySetInnerHTML={{ __html: CONTRACT }} />
         {process.env.NODE_ENV === "development" ? (
           <Script

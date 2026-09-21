@@ -20,8 +20,17 @@ export type NoteItem = {
 
 export const CONTACT_EMAIL = "contact@aicallisto.com";
 
+export const SITE_URL = "https://aicallisto.com";
+
+export const SITE_NAME = "callisto";
+
+export const SEO_ALTERNATE_NAMES = ["Callisto AI", "CallistoAI", "Callisto"] as const;
+
 export const TAGLINE =
   "we build and operate software, services and internet businesses.";
+
+export const SEO_DESCRIPTION =
+  "Callisto builds and operates software, services and internet businesses. Also known as Callisto AI and CallistoAI.";
 
 export const work: WorkItem[] = [
   {

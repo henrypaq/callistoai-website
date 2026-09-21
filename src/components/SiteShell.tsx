@@ -1,30 +1,47 @@
-import Link from "next/link";
-import { CONTACT_EMAIL } from "@/lib/content";
+"use client";
 
-type SiteShellProps = {
+import { TransitionLink } from "@/components/TransitionLink";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+import { CONTACT_EMAIL } from "@/lib/content";
+import { signalNav } from "@/lib/nav-transition";
+
+export function SiteShell({
+  children,
+  home = false,
+}: {
   children: React.ReactNode;
   home?: boolean;
-  current?: "work" | "notes";
-};
+}) {
+  const pathname = usePathname();
+  const isHome = home || pathname === "/";
+  const current = pathname.startsWith("/work")
+    ? "work"
+    : pathname.startsWith("/notes")
+      ? "notes"
+      : undefined;
 
-export function SiteShell({ children, home = false, current }: SiteShellProps) {
+  useEffect(() => {
+    signalNav();
+  }, [pathname]);
+
   return (
-    <div className={home ? "shell shell-home" : "shell"}>
-      {!home ? (
+    <div className={isHome ? "shell shell-home" : "shell"}>
+      {!isHome ? (
         <header className="mast">
-          <Link href="/" className="mast-name">
+          <TransitionLink href="/" className="mast-name">
             callisto
-          </Link>
+          </TransitionLink>
         </header>
       ) : null}
       <div className="shell-body">{children}</div>
       <nav className="dock" aria-label="primary">
-        <Link href="/work" aria-current={current === "work" ? "page" : undefined}>
+        <TransitionLink href="/work" aria-current={current === "work" ? "page" : undefined}>
           work
-        </Link>
-        <Link href="/notes" aria-current={current === "notes" ? "page" : undefined}>
+        </TransitionLink>
+        <TransitionLink href="/notes" aria-current={current === "notes" ? "page" : undefined}>
           notes
-        </Link>
+        </TransitionLink>
         <a href={`mailto:${CONTACT_EMAIL}`}>contact</a>
       </nav>
     </div>

@@ -85,6 +85,51 @@ a:hover {
   min-height: 0;
 }
 
+.page-swap {
+  min-height: 100%;
+  view-transition-name: studio-page;
+}
+
+.page-swap.is-entering {
+  animation: page-swap 480ms var(--ease-out) both;
+}
+
+.page-swap.is-leaving {
+  animation: page-swap-out 200ms var(--ease-out) both;
+}
+
+@keyframes page-swap {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-swap-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(studio-page) {
+  animation: page-swap-out 320ms var(--ease-out) both;
+}
+
+::view-transition-new(studio-page) {
+  animation: page-swap 420ms var(--ease-out) both;
+}
+
 .mast {
   padding: 28px 28px 0;
 }
@@ -111,6 +156,7 @@ a:hover {
   font-weight: 500;
   letter-spacing: 0.02em;
   padding-bottom: 6px;
+  transition: color 280ms var(--ease-out);
 }
 
 .dock a::after {
@@ -123,7 +169,7 @@ a:hover {
   background: currentColor;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 180ms var(--ease-out);
+  transition: transform 280ms var(--ease-out);
 }
 
 .dock a:hover::after,
@@ -339,19 +385,23 @@ a:hover {
 
 @media (prefers-reduced-motion: reduce) {
   a,
+  .dock a,
   .dock a::after,
   .row {
     transition: none;
   }
 
-  .list-page:hover .row {
-    opacity: 1;
-  }
-
+  .page-swap,
+  .page-swap.is-entering,
+  .page-swap.is-leaving,
   .colophon .mark,
   .colophon h1,
   .colophon p {
     animation: none;
+  }
+
+  .list-page:hover .row {
+    opacity: 1;
   }
 }
 
