@@ -1,9 +1,10 @@
-export type WorkKind = "software" | "project";
+export type WorkKind = "software" | "project" | "experiment";
 
 export type WorkItem = {
   slug: string;
   title: string;
   kind: WorkKind;
+  status?: string;
   summary: string;
   body: string[];
   synthetic?: boolean;
@@ -34,48 +35,53 @@ export const SEO_DESCRIPTION =
 
 export const work: WorkItem[] = [
   {
-    slug: "cortex",
-    title: "cortex",
+    slug: "frame",
+    title: "frame",
     kind: "software",
-    summary: "an intelligence layer for decisions inside an operation.",
+    summary: "a configurator for products with more decisions than a form can handle.",
     body: [
-      "cortex sits on the data a business already has and turns it into something people can act on.",
-      "it is software we build and then stay with: dashboards only where they earn their place, models only where they change a decision.",
+      "frame was built for a prefab building company selling a product that changes with size, layout, finishes and options.",
+      "customers can work through those decisions visually, see the configuration take shape and send the result through as a quote request.",
+      "behind it is a back office for managing products, options, images and pricing without touching the site.",
     ],
   },
   {
-    slug: "steward",
-    title: "steward",
+    slug: "vault",
+    title: "vault",
     kind: "software",
-    summary: "operations that keep moving after the call is missed.",
+    summary: "a media library built around how a team actually looks for its files.",
     body: [
-      "steward handles the conversations and bookings that used to wait on someone picking up.",
-      "we build it around the actual hours of a service business, then operate it so it stays current.",
+      "vault was built for an ecommerce company with a growing archive of product and creative assets.",
+      "files can be uploaded, organized and tagged, including with image recognition, then searched using the language the team already uses to describe the work.",
+      "the result is a faster way to move through a large media library without relying on folder structure or filenames alone.",
     ],
   },
   {
-    slug: "ledger",
-    title: "ledger",
-    kind: "project",
-    summary: "a quiet system for following money through a service business.",
+    slug: "intake",
+    title: "intake",
+    kind: "software",
+    summary: "a single place to get a new client from signed to ready to work.",
     body: [
-      "invoices, collections, and the work they refer to, held in one place.",
-      "this entry is a placeholder so the list can be judged. replace it with a real project when you have one to publish.",
+      "intake was designed around an agency onboarding process where starting work meant collecting information, files and access across several different platforms.",
+      "it brings those steps into one place so the team can see what has been provided, what is still missing and what needs attention before work begins.",
     ],
-    synthetic: true,
   },
   {
-    slug: "switchboard",
-    title: "switchboard",
-    kind: "software",
-    summary: "voice and message handling that stays on after hours.",
+    slug: "herme5",
+    title: "herme5",
+    kind: "experiment",
+    summary: "an agent for work that should not need another chat window.",
     body: [
-      "a small stack for inbound calls and texts, routed to whoever should see them.",
-      "this entry is a placeholder so the list can be judged. replace it with a real project when you have one to publish.",
+      "we already have chatgpt to interpret a message, rewrite an email or answer a question.",
+      "herme5 is aimed at the part after that.",
+      "give it a task, let it move between the tools involved, and only bring you back in when something actually needs your input.",
     ],
-    synthetic: true,
   },
 ];
+
+export function workLabel(item: WorkItem) {
+  return item.status ? `${item.kind} · ${item.status}` : item.kind;
+}
 
 export const notes: NoteItem[] = [
   {

@@ -1,6 +1,6 @@
 import { PageHead } from "@/components/PageHead";
 import { TransitionLink } from "@/components/TransitionLink";
-import { work } from "@/lib/content";
+import { work, workLabel } from "@/lib/content";
 
 export const metadata = {
   title: "work",
@@ -16,10 +16,7 @@ export default function WorkPage() {
         <TransitionLink key={item.slug} href={`/work/${item.slug}`} className="row">
           <div className="row-top">
             <span className="row-title">{item.title}</span>
-            <span className="row-meta">
-              {item.kind}
-              {item.synthetic ? " · placeholder" : ""}
-            </span>
+            <span className="row-meta">{workLabel(item)}</span>
           </div>
           <p className="row-summary">{item.summary}</p>
         </TransitionLink>
